@@ -10,11 +10,12 @@ Run the `players.sql` file for your `nba_db` by typing`psql -d nba_db -f players
 
 ### Part 2
 
-Run `gem install pg` to install the pg gem. The pg gem allows us to run SQL in a Ruby file.
+In `psql` in the directory that you cloned this repository, run the command:
+```
+\COPY players(name,age,team,games,points) FROM 'data.csv' WITH (FORMAT csv);
+```
 
-Run the `load_data.rb` Ruby program __ONCE__ (use the command: ```ruby load_data.rb```)to populate the database. It reads in the CSV information from the `data.csv` textfile and populates your database. The data is structured like the following:`name,age,team,games,points`
-
-** `games` is games played during the season and `points` is total points scored over the course of the season.
+In order to copy the CSV to the database.
 
 ### Part 3
 
